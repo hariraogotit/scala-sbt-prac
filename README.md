@@ -11,5 +11,5 @@
 9. Resolvers are the source from which the depedencies are downloaded. In our example it is 
 resolvers += "Sonatype Releases Repository" at "https://oss.sonatype.org/content/repositories/releases"
 10. Dependencies declared - libraryDependencies += "net.liftweb" % "lift-util_2.11" % "3.1.0". Here _2.11 tells sbt to download the net.liftweb that is compatable for scala 2.11 that we are using.
-11. This will be annoying if you want to build the project with different scala versions. So sbt lets us not to mention the scala version if we provide two %%. This way sbt makes sures to download the correct version of the dependencies based on the scala version used
-libraryDependencies += "net.liftweb" %% "lift-util" % "3.1.0"
+11. This will be annoying if you want to build the project with different scala versions. So sbt lets us not to mention the scala version if we provide two %% (ibraryDependencies += "net.liftweb" %% "lift-util" % "3.1.0"). This way sbt makes sures to download the correct version of the dependencies based on the scala version used.
+
