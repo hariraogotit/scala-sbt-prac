@@ -13,9 +13,11 @@ resolvers += "Sonatype Releases Repository" at "https://oss.sonatype.org/content
 10. Dependencies declared - libraryDependencies += "net.liftweb" % "lift-util_2.11" % "3.1.0". Here _2.11 tells sbt to download the net.liftweb that is compatable for scala 2.11 that we are using.
 11. This will be annoying if you want to build the project with different scala versions. So sbt lets us not to mention the scala version if we provide two %% (ibraryDependencies += "net.liftweb" %% "lift-util" % "3.1.0"). This way sbt makes sures to download the correct version of the dependencies based on the scala version used.
 12. More than one dependencies can be declaired as follows
+
 libraryDependencies += "net.liftweb" %% "lift-util" % "3.1.0"
 
 libraryDependencies += "net.liftweb" %% "lift-json" % "3.1.0"
+
 14. Since build.sbt is a scala file, we can extract the build version to a variable and have the above in a block as shown below
 {
   val liftVersion = "3.1.0"
@@ -25,6 +27,7 @@ libraryDependencies += "net.liftweb" %% "lift-json" % "3.1.0"
      "net.liftweb" %% "lift-json" % liftVersion    
   )
 }
+
 15. Publishing - you can publish to many repositories like maven repo etc. 
 16. To publish locally - command publishLocal is used. If the version does not end in -SNAPSHOT then they are immutable i.e you cannot publish the same 1.0.0 version twice
 17.
