@@ -19,6 +19,7 @@ libraryDependencies += "net.liftweb" %% "lift-util" % "3.1.0"
 libraryDependencies += "net.liftweb" %% "lift-json" % "3.1.0"
 
 14. Since build.sbt is a scala file, we can extract the build version to a variable and have the above in a block as shown below
+
 {
   val liftVersion = "3.1.0"
 
