@@ -35,7 +35,9 @@ libraryDependencies += "net.liftweb" %% "lift-json" % "3.1.0"
 18. pomExtra is empty by default in sbt. If you want to add extra info to the pom file that is being published then pomExtra can be used. 
 example - If you add the following 
 pomExtra := <issueManagment><system>GitHub</system><url>www.GitHub.com/hariraogotit</url></issueManagment>
-###The following will be in the published pom file
+
+The following will be in the published pom file
+
 <issueManagment>
         <system>GitHub</system>
         <url>www.GitHub.com/hariraogotit</url>
