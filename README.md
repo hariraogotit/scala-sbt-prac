@@ -40,8 +40,10 @@ pomExtra := <issueManagment><system>GitHub</system><url>www.GitHub.com/hariraogo
         <system>GitHub</system>
         <url>www.GitHub.com/hariraogotit</url>
 </issueManagment>
+
 19. publishTo is the settings that points to the remote repo in which the project needs to be published. 
 example :- publishTo := Some("Sonatype Release Repository" at "https://oss.sonatype.org/content/repositories/releases")
+
 20. When you execute the command publishTo, the project is published to the remote repo. In our case it will fail as we do not have access. Hence we need to set another property called credentails pointing to a properties file (example - credentials := Credentials(Path.userHome/".ivy2"/credentials)) which  has username password etc. 
 
 
