@@ -31,5 +31,21 @@ libraryDependencies += "net.liftweb" %% "lift-json" % "3.1.0"
 
 15. Publishing - you can publish to many repositories like maven repo etc. 
 16. To publish locally - command publishLocal is used. If the version does not end in -SNAPSHOT then they are immutable i.e you cannot publish the same 1.0.0 version twice
-17.
+17. publishMavenStyle is set to true default. This publishes the project in maven style. If publishMavenStyle is set to false then the pom files will not be generated. 
+18. pomExtra is empty by default in sbt. If you want to add extra info to the pom file that is being published then pomExtra can be used. 
+example - If you add the following 
+pomExtra := <issueManagment><system>GitHub</system><url>www.GitHub.com/hariraogotit</url></issueManagment>
+###The following will be in the published pom file
+<issueManagment>
+        <system>GitHub</system>
+        <url>www.GitHub.com/hariraogotit</url>
+</issueManagment>
+19. publishTo is the settings that points to the remote repo in which the project needs to be published. 
+example :- publishTo := Some("Sonatype Release Repository" at "https://oss.sonatype.org/content/repositories/releases")
+20. When you execute the command publishTo, the project is published to the remote repo. In our case it will fail as we do not have access. Hence we need to set another property called credentails pointing to a properties file (example - credentials := Credentials(Path.userHome/".ivy2"/credentials)) which  has username password etc. 
+
+
+
+
+
 
