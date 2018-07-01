@@ -53,6 +53,7 @@ example :- publishTo := Some("Sonatype Release Repository" at "https://oss.sonat
 lazy val animals = project in file("animals")
 
 lazy val animalsCopy = project in file("animals-copy")
+
 23.
 
 
