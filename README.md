@@ -47,6 +47,14 @@ The following will be in the published pom file
 example :- publishTo := Some("Sonatype Release Repository" at "https://oss.sonatype.org/content/repositories/releases")
 
 20. When you execute the command publishTo, the project is published to the remote repo. In our case it will fail as we do not have access. Hence we need to set another property called credentails pointing to a properties file (example - credentials := Credentials(Path.userHome/".ivy2"/credentials)) which  has username password etc. 
+21. show sources lists all the source files. When you type this in the top level or in parent level where there are no src directories, sbt is not going to list all the source files i.e all *.scala files. 
+22. Upon adding the below two lines , show sources command will list all the source files. 
+
+lazy val animals = project in file("animals")
+
+lazy val animalsCopy = project in file("animals-copy")
+23.
+
 
 
 
