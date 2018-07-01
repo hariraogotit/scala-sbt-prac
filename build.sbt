@@ -17,8 +17,8 @@ resolvers += "Sonatype Releases Repository" at "https://oss.sonatype.org/content
   )
 }
 
-pomExtra := <issueManagment><system>GitHub</system><url>www.GitHub.com/hariraogotit</url></issueManagment>
-
-publishTo := Some("Sonatype Release Repository" at "https://oss.sonatype.org/content/repositories/releases")
-
-credentials := Credentials(Path.userHome/".ivy2"/credentials)
+// pomExtra := <issueManagment><system>GitHub</system><url>www.GitHub.com/hariraogotit</url></issueManagment>
+//
+// publishTo := Some("Sonatype Release Repository" at "https://oss.sonatype.org/content/repositories/releases")
+//
+// credentials := Credentials(Path.userHome/".ivy2"/credentials)
