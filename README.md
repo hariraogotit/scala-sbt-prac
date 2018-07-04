@@ -54,7 +54,37 @@ lazy val animals = project in file("animals")
 
 lazy val animalsCopy = project in file("animals-copy")
 
-23.
+23.All the show commnads, compile run main everything works for each sub module but these commands need module name prefixed 
+eg show animals/libraryDependecies, show animalsCopy/libraryDependencies, animals/compile, animalsCopy/runMain animals.Run etc
+
+24. show libraryDependecies gives the below i.e animalsCopy and animals depends on scala where as the root project depends on scala and the two net.lifwebs' 
+[info] animalsCopy / libraryDependencies
+[info] 	List(org.scala-lang:scala-library:2.12.6)
+[info] animals / libraryDependencies
+[info] 	List(org.scala-lang:scala-library:2.12.6)
+[info] libraryDependencies
+[info] 	List(org.scala-lang:scala-library:2.11.6, net.liftweb:lift-util:3.1.0, net.liftweb:lift-json:3.1.0)
+25. In case if you want animalsCopy to depent on net.liftweb util and json also on animals then do the following 
+
+lazy val animalsCopy = (project in file("animals-copy"))
+                            .settings(
+                              libraryDependencies ++=List(
+                                "net.liftweb" %% "lift-util" % liftVersion,
+                                "net.liftweb" %% "lift-json" % liftVersion
+                              )
+                            )
+                            .dependsOn(animals)  
+ 26. Now when you do show libraryDependencies you will notice that animalsCopy depends on scala and the two net.liftwebs' also the animalsCopy depends on animals which appears in the classpath (How to find the classpath????? )
+ 
+ [info] animalsCopy / libraryDependencies
+[info] 	List(org.scala-lang:scala-library:2.12.6, net.liftweb:lift-util:3.1.0, net.liftweb:lift-json:3.1.0)
+[info] animals / libraryDependencies
+[info] 	List(org.scala-lang:scala-library:2.12.6)
+[info] libraryDependencies
+[info] 	List(org.scala-lang:scala-library:2.11.6)
+
+
+
 
 
 
