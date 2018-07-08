@@ -83,7 +83,55 @@ lazy val animalsCopy = (project in file("animals-copy"))
 [info] libraryDependencies
 [info] 	List(org.scala-lang:scala-library:2.11.6)
 
+27. When you do show version you get the following 
 
+[info] animalsCopy / version
+[info] 	0.1.0-SNAPSHOT
+[info] animals / version
+[info] 	0.1.0-SNAPSHOT
+[info] version
+[info] 	1.0.0-SNAPSHOT
+
+similarly when you do show organization you get 
+[info] animalsCopy / organization
+[info] 	animalscopy
+[info] animals / organization
+[info] 	animals
+[info] organization
+[info] 	farm
+
+28. As you see the organization and version changes in sub modules
+29. To have them same as the root project change the following from 
+
+organization := "farm"
+
+version := "1.0.0-SNAPSHOT"
+
+to 
+
+organization in ThisBuild := "farm"
+
+version in ThisBuild := "1.0.0-SNAPSHOT"
+
+30. Now show organization and show version will result in the following i.e version and organization will be cascaded to the child modules.
+
+[info] animalsCopy / organization
+[info] 	farm
+[info] animals / organization
+[info] 	farm
+[info] organization
+[info] 	farm
+
+[info] animalsCopy / version
+[info] 	1.0.0-SNAPSHOT
+[info] animals / version
+[info] 	1.0.0-SNAPSHOT
+[info] version
+[info] 	1.0.0-SNAPSHOT
+
+31. The build.sbt in the root project will grow bigger if we have all of the modules details. Hence every module can be given individual sbt files and let the root sbt file coordinate between child sbt files and have all the common stuffs
+
+32. Create individual sbt files for every project. Look at the sbt files created and checked in. Individual module can hold the fields and dependencies that are specific to it in its sbt file.
 
 
 
