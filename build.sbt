@@ -1,8 +1,8 @@
 name := "Animals"
 
-organization := "farm"
+organization in ThisBuild := "farm"
 
-version := "1.0.0-SNAPSHOT"
+version in ThisBuild := "1.0.0-SNAPSHOT"
 
 scalaVersion := "2.11.6"
 
@@ -19,10 +19,4 @@ val liftVersion = "3.1.0"
 lazy val animals = project in file("animals")
 
 lazy val animalsCopy = (project in file("animals-copy"))
-                            .settings(
-                              libraryDependencies ++=List(
-                                "net.liftweb" %% "lift-util" % liftVersion,
-                                "net.liftweb" %% "lift-json" % liftVersion
-                              )
-                            )
-                            .dependsOn(animals)  
+                            .dependsOn(animals)
